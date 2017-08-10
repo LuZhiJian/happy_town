@@ -1,0 +1,14 @@
+@import "../../styles/base";
+.login-wrapper {
+  font-size: rem(30);
+  text-align: center;
+
+  h4 {
+    font-size: rem(80);
+  }
+
+  a {
+    font-size: rem(40);
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../styles/base";
+html, body, #app {
+  width: 100%;
+  height: 100%;
+}
+.home-wrapper {
+  height: 100%;
+  font-size: rem(30);
+  text-align: center;
+  background-color: #abcdef;
+
+  h4 {
+    font-size: rem(80);
+  }
+
+  a {
+    font-size: rem(40);
+    text-decoration: underline;
+  }
+}
