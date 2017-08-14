@@ -1,4 +1,9 @@
-body {
-    font-family: $yh;
-    font-size: rem(28);
+$color-green:rgba(26, 188, 156, 1);
+
+i {
+  font-family: "iconfont" !important;
+  font-size: rem(48);
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

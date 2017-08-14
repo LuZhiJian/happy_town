@@ -1,7 +1,68 @@
 @import "../../styles/base";
 
 .header {
-  font-size: rem(40);
-  height: rem(120);
-  background-color: #f0f;
+  font-size: rem(30);
+  height: rem(80);
+  background-color: $color-green;
+  text-align: center;
+  line-height: rem(80);
+
+  .flex-2, .flex-8 {
+    height: rem(80);
+  }
+
+  .flex-2 {
+    color: #fff;
+
+    > div {
+      width: 100%;
+      height: rem(80);
+    }
+
+    .back {
+      line-height: rem(70);
+
+      i {
+        font-size: rem(60);
+      }
+    }
+  }
+
+  .title {
+    font-size: rem(30);
+    color: #fff;
+  }
+
+  .search-box {
+    width: 100%;
+    height: rem(80);
+    overflow: hidden;
+    position: relative;
+
+    input {
+      width: 100%;
+      height: rem(60);
+      line-height: rem(68);
+      position: absolute;
+      top: rem(10);
+      left: 0;
+      border: 0;
+      padding: rem(0, 40, 0, 20);
+
+      &:focus + i {
+        color: $color-green;
+        @include transition(.5s);
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 1px;
+      right: 10px;
+      font-size: rem(38);
+      color: #999;
+    }
+
+    @include placeholder-color(#999);
+  }
 }

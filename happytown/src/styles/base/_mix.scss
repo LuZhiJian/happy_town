@@ -66,6 +66,29 @@
     padding: 0 $h/2;
 }
 
+// placeholder
+@mixin placeholder-color($color) {
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    color: $color;
+  }
+
+  input::-moz-placeholder,
+  textarea::-moz-placeholder {
+    color: $color;
+  }
+
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
 // 动画时间
 @mixin transition( $time ) {
     transition: $time;

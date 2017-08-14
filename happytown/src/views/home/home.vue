@@ -2,8 +2,7 @@
   <div class="home-wrapper">
     <app-header :id="id"></app-header>
     <h4>{{title}}</h4>
-    <a :href="'#/login/' + id">登录</a>
-    <span> 待机时间</span>
+    <app-footer></app-footer>
   </div>
 </template>
 <script>

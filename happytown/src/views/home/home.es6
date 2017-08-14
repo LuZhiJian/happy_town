@@ -1,21 +1,22 @@
 import AppHeader from '../../components/appHeader'
+import AppFooter from '../../components/appFooter'
 
 export default {
   name: 'home',
 
   components: {
-    AppHeader
+    AppHeader,
+    AppFooter
   },
 
   data () {
     return {
-      title: '首页',
-      id: 20
+      title: '首页home',
+      id: 21
     }
   },
 
   mounted() {
-    this.title = '计算机'
   },
 
   methods: {
