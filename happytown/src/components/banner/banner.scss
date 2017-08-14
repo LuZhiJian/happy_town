@@ -1,0 +1,39 @@
+@import "../../styles/base";
+
+.home-banner {
+  width: 100%;
+  background-color: #f1f1f1;
+
+  .swiper-wrapper {
+    width: 100%;
+    height: rem(300);
+
+    .swiper-slide {
+      width: 100%;
+      height: rem(300);
+      overflow: hidden;
+
+      a {
+        display: block;
+        line-height: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      background-color: #fff;
+      opacity: 1;
+      border: rem(1) solid $color-green;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $color-green;
+        opacity: 1;
+      }
+    }
+  }
+}

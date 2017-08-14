@@ -1,12 +1,14 @@
 import AppHeader from '../../components/appHeader'
 import AppFooter from '../../components/appFooter'
+import Banner from '../../components/banner'
 
 export default {
   name: 'home',
 
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
+    Banner
   },
 
   data () {

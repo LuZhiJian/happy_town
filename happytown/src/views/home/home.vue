@@ -1,7 +1,10 @@
 <template>
   <div class="home-wrapper">
     <app-header :id="id"></app-header>
-    <h4>{{title}}</h4>
+    <div class="home-content">
+      <banner></banner>
+      <h4>{{title}}</h4>
+    </div>
     <app-footer></app-footer>
   </div>
 </template>
