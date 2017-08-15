@@ -1,3 +1,7 @@
+@import "./_reset";
+@import "./_mix";
+@import "./_pretreated";
+
 $color-green:rgba(26, 188, 156, 1);
 
 i {
@@ -6,4 +10,75 @@ i {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.product-list {
+  width: 100%;
+  padding: rem(30, 0, 0);
+  @include clearfix;
+
+  .item {
+    width: 50%;
+    float: left;
+    padding: rem(0, 15);
+    margin-bottom: rem(25);
+    border-radius: rem(6);
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      box-shadow: 0 0 rem(10) rgba(30, 30, 30, 0.4);
+    }
+
+    .img {
+      width: 100%;
+      height: rem(200);
+      background-color: #c9c9c9;
+      overflow: hidden;
+    }
+
+    .pro-name {
+      font-size: rem(24);
+      height: rem(48);
+      color: #999;
+      line-height: 2;
+      padding: rem(0, 20);
+      @include text-overflow();
+    }
+
+    .collection {
+      font-size: rem(24);
+      line-height: 1;
+      height: rem(54);
+      padding: rem(0, 20, 10);
+      text-align: right;
+
+      button {
+        border: 0;
+        background-color: transparent;
+        color: $color-green;
+
+        i {
+          font-size: rem(34);
+          vertical-align: 0;
+          margin-right: rem(8);
+        }
+
+        .icon-xin1 {
+          vertical-align: rem(-2);
+        }
+      }
+    }
+  }
+}
+
+.no-more {
+  text-align: center;
+  line-height: 2;
+  font-size: rem(28);
+  padding-bottom: rem(20);
+  color: #aaa;
 }

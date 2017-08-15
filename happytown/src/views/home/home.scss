@@ -5,14 +5,41 @@ html, body, #app {
 }
 .home-wrapper {
   height: 100%;
-  font-size: rem(30);
 
-  h4 {
-    font-size: rem(80);
+  .home-content {
+    padding-bottom: rem(120);
   }
 
-  a {
-    font-size: rem(40);
-    text-decoration: underline;
+  .index-list-wrap {
+    padding: rem(30, 20, 0);
+  }
+
+  .index-tab-ul {
+    width: rem(360);
+    margin: 0 auto;
+    border: rem(2) solid $color-green;
+    border-radius: rem(6);
+
+    li {
+      font-size: rem(24);
+      text-align: center;
+
+      &:first-child {
+        border-right: rem(2) solid $color-green;
+      }
+
+      &.active {
+        background-color: $color-green;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      color: $color-green;
+    }
   }
 }
