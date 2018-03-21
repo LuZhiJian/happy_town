@@ -3,12 +3,50 @@
   font-size: rem(30);
   text-align: center;
 
-  h4 {
-    font-size: rem(80);
+  .login-content {
+    padding: rem(160, 80);
   }
 
-  a {
-    font-size: rem(40);
-    text-decoration: underline;
+  .login-form {}
+
+  .forget-line,
+  .register-line {
+    width: 100%;
+    line-height: rem(80);
+    font-size: rem(28);
+    text-align: right;
+
+    a {
+      color: $color-green;
+    }
+  }
+
+  .register-line {
+    text-align: center;
+    font-size: rem(32);
+  }
+
+  .other-plate {
+    margin-top: rem(80);
+
+    .line {
+      width: 100%;
+      height: rem(2);
+      background-color: #dfdfdf;
+      position: relative;
+
+      .or {
+        width: rem(80);
+        height: rem(60);
+        line-height: rem(60);
+        text-align: center;
+        background-color: #fff;
+        position: absolute;
+        top: - rem(30);
+        left: 50%;
+        margin-left: - rem(40);
+        color: #c8c8c8;
+      }
+    }
   }
 }

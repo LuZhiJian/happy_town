@@ -7,25 +7,48 @@ export default {
     id: Number,
   },
 
-  props: ['id'],
+  props: ['left', 'title', 'right'],
 
   data () {
     return {
+      leftData: this.left || false,
+      titleData: this.title || false,
+      rightData: this.right || false
     }
   },
+
   mounted () {
-    console.log(this.id)
   },
 
   methods: {
-    onIdChange(val) {
-      console.log(val)
+    onLeftChange(val) {
+      this.leftData = val
+    },
+    onTitleChange(val) {
+      this.titleData = val
+    },
+    onRightChange(val) {
+      this.rightData = val
+    },
+    // 返回上一页
+    back() {
+      this.$router.go(-1)
     }
   },
 
   watch: {
-    'id': {
-      handler: 'onIdChange',
+    'left': {
+      handler: 'onLeftChange',
+      immediate: true,
+      deep: true
+    },
+    'title': {
+      handler: 'onTitleChange',
+      immediate: true,
+      deep: true
+    },
+    'right': {
+      handler: 'onRightChange',
       immediate: true,
       deep: true
     }

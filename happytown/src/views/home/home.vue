@@ -1,6 +1,6 @@
 <template>
   <div class="home-wrapper">
-    <app-header :id="id"></app-header>
+    <app-header :left="headData.left" :title="headData.title" :right="headData.right"></app-header>
     <div class="home-content">
       <banner></banner>
       <div class="index-list-wrap">

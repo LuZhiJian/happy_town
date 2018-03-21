@@ -1,6 +1,7 @@
 import AppHeader from '../../components/appHeader'
+
 export default {
-  name: 'login',
+  name: 'forgot',
 
   components: {
     AppHeader
@@ -9,8 +10,8 @@ export default {
   data () {
     return {
       headData: {
-        left: false,
-        title: '用户登录',
+        left: 'back',
+        title: '找回密码',
         right: false
       },
     }

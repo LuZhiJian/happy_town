@@ -2,13 +2,13 @@
 
 .header {
   font-size: rem(30);
-  height: rem(80);
+  height: rem(88);
   background-color: $color-green;
   text-align: center;
-  line-height: rem(80);
+  line-height: rem(88);
 
   .flex-2, .flex-8 {
-    height: rem(80);
+    height: rem(88);
   }
 
   .flex-2 {
@@ -16,11 +16,17 @@
 
     > div {
       width: 100%;
-      height: rem(80);
+      height: rem(88);
+    }
+
+    a {
+      color: #fff;
+      display: block;
+      height: rem(88);
     }
 
     .back {
-      line-height: rem(70);
+      line-height: rem(78);
 
       i {
         font-size: rem(60);
@@ -29,7 +35,7 @@
   }
 
   .title {
-    font-size: rem(30);
+    font-size: rem(32);
     color: #fff;
   }
 
@@ -44,7 +50,7 @@
       height: rem(60);
       line-height: rem(68);
       position: absolute;
-      top: rem(10);
+      top: rem(14);
       left: 0;
       border: 0;
       padding: rem(0, 40, 0, 20);
@@ -62,7 +68,5 @@
       font-size: rem(38);
       color: #999;
     }
-
-    @include placeholder-color(#999);
   }
 }
