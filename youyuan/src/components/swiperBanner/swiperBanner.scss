@@ -1,0 +1,41 @@
+.swiper-banner-wrapper {
+  width: 100%;
+
+  .mint-swipe {
+    width: 100%;
+    height: rem(350);
+
+    .mint-swipe-item {
+      width: 100%;
+      height: rem(350);
+      overflow: hidden;
+
+      a {
+        display: block;
+        line-height: 0;
+        height: rem(350);
+      }
+
+      img {
+        width: 100%;
+        min-height: 100%;
+      }
+    }
+  }
+
+  .mint-swipe-indicators {
+    bottom: 0;
+
+    .mint-swipe-indicator {
+      width: rem(15);
+      height: rem(15);
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 1;
+
+      &.is-active {
+        background-color: #fff;
+        opacity: 1;
+      }
+    }
+  }
+}

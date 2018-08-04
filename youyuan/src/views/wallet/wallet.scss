@@ -1,0 +1,51 @@
+.wallet-wrapper {
+  .list-content {
+    padding: rem(0, 30);
+  }
+
+  .wallet-item {
+    border-bottom: 1px solid #e7e7e7;
+
+    .row {
+      width: 100%;
+      padding: rem(25, 0);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .lt {
+      .name {
+        font-size: rem(32);
+        color: #333;
+        line-height: rem(36);
+
+        .tag {
+          padding: rem(0, 12);
+          height: rem(36);
+          display: inline-block;
+          vertical-align: top;
+          @include linear-gradient(to right, #ffa709, #ffc700);
+          font-size: rem(24);
+          line-height: rem(36);
+          color: #fff;
+          border-radius: rem(18);
+          margin-left: rem(10);
+        }
+      }
+
+      .date {
+        color: #999;
+        font-size: rem(26);
+        line-height: 1;
+        margin-top: rem(20);
+      }
+    }
+
+    .rt {
+      line-height: rem(82);
+      text-align: right;
+      font-size: rem(44);
+      color: $color-green;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+address,
+b,
+caption,
+cite,
+code,
+dfn,
+em,
+i,
+optgroup,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+button,
+input,
+optgroup,
+textarea {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+code,
+kbd,
+samp,
+tt {
+  font-size: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  *font-size: 100%;
+}
+
+body {
+  color: #333;
+  font: rem(24) Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  line-height: 1.5;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+sub,
+sup {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+:link,
+:visited,
+del,
+ins {
+  text-decoration: none;
+}
+
+a,
+a:active,
+a:link,
+a:visited {
+  border: 0 none;
+  background: none;
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color: #ed1c24;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: "";
+  content: none;
+}
+
+button {
+  background-color: #fff;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}

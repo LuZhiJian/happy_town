@@ -1,0 +1,214 @@
+.enroll-wrapper {
+  height: 100%;
+  background-color: #eef1f5;
+
+  .enroll-content {
+    padding-bottom: rem(60);
+  }
+
+  .part-item {
+    background-color: #fff;
+    padding: rem(40, 30);
+    margin-bottom: rem(20);
+
+    &.pb0 {
+      padding-bottom: 0;
+    }
+
+    .green-title {
+      font-size: rem(36);
+      line-height: 1;
+      color: $color-green;
+      padding-left: rem(25);
+      position: relative;
+      margin-bottom: rem(40);
+
+      &:before {
+        content: '';
+        width: rem(6);
+        height: 100%;
+        display: block;
+        background-color: $color-green;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: rem(3);
+      }
+    }
+
+    .activity-name {
+      font-size: rem(32);
+      color: #333;
+      line-height: 1;
+      margin-bottom: rem(23);
+    }
+
+    .date-and-place {
+      font-size: rem(30);
+      color: #666;
+      line-height: 1;
+      position: relative;
+      padding-left: rem(40);
+
+      &:before {
+        content: '';
+        @include radius-box(rem(14));
+        background-color: $color-green;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: rem(-7);
+      }
+
+      span {
+        margin-right: rem(40)
+      }
+    }
+  }
+
+  .member-basic-form {
+    padding-right: rem(100);
+    position: relative;
+
+    .form-group {
+      .mint-cell {
+      }
+
+      .mint-cell-wrapper {
+        background: none;
+        padding-left: rem(35);
+        position: relative;
+
+        &:before {
+          content: '';
+          @include radius-box(rem(14));
+          background-color: $color-green;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: rem(-7);
+        }
+
+        .mint-cell-title {
+          font-size: rem(32);
+          color: #666;
+        }
+
+        .mint-cell-value {
+          input {
+            text-align: right;
+            font-size: rem(32);
+            color: #333;
+          }
+
+          @include placeholder-color(#cccccc);
+
+          .mint-field-clear {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .add-btn,
+    .remove-btn {
+      width: rem(67);
+      height: rem(67);
+      position: absolute;
+      right: 0;
+      border-radius: 50%;
+      top: 50%;
+      margin-top: rem(-35);
+      box-shadow: 0 rem(5) rem(10) rgba(52, 52, 52, 0.5);
+
+      svg {
+        margin-left: rem(-2);
+      }
+    }
+
+    & + .member-basic-form {
+      margin-top: rem(70);
+
+      &:after {
+        content: '';
+        width: rem(30);
+        height: rem(50);
+        display: block;
+        @include bg('../../assets/images/icon-link.png');
+        position: absolute;
+        top: rem(-50);
+        left: 0;
+      }
+    }
+  }
+
+  .fee-box {
+    font-size: rem(32);
+
+    span {
+      color: $color-yellow;
+    }
+  }
+
+  .pay-ways-box {
+    .pay-item {
+      .icon-box {
+        height: rem(80);
+        line-height: 0;
+
+        img {
+          margin-top: rem(18);
+          width: rem(44);
+        }
+      }
+
+      .txt {
+        line-height: rem(80);
+        font-size: rem(32);
+        color: #333;
+        padding: rem(0, 30);
+
+        span {
+          margin-left: rem(30);
+        }
+      }
+
+      .ck-box {
+        height: rem(80);
+        position: relative;
+
+        .checkbox {
+          width: rem(36);
+          height: rem(36);
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: rem(-18);
+          @include bg('../../assets/images/icon-unselect.png');
+
+          &.checked {
+            @include bg('../../assets/images/icon-selected.png');
+          }
+        }
+      }
+    }
+  }
+
+  .coupon {
+    .flex-6 {
+      font-size: rem(32);
+      color: #333;
+      line-height: rem(80);
+
+      span {
+        font-size: rem(26);
+        color: #ff2525;
+      }
+
+      svg {
+        vertical-align: rem(-6);
+        margin-left: rem(8);
+      }
+    }
+  }
+}

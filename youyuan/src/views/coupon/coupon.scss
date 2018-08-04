@@ -1,0 +1,78 @@
+.coupon-wrapper {
+  .coupon-content {
+    padding: rem(50, 30);
+
+    .coupon-item {
+      height: rem(250);
+      border: 1px solid #e7e7e7;
+      border-left: 0;
+      border-right: 0;
+      border-radius: rem(12);
+      padding: rem(0, 50);
+      margin-bottom: rem(52);
+      position: relative;
+      overflow: hidden;
+
+      .item-content {
+        padding: rem(50, 0);
+      }
+
+      .left-bor {
+        width: rem(24);
+        height: 100%;
+        @include bg('../../assets/images/coupon-bor.png');
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .right-bor {
+        width: rem(10);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include linear-gradient(to bottom, #ffc401, #ffac08);
+      }
+
+      .txt {
+        h3 {
+          font-size: rem(44);
+          font-weight: bold;
+          color: #666666;
+          line-height: 1;
+          margin-bottom: rem(18);
+        }
+
+        p {
+          font-size: rem(26);
+          color: #999999;
+          line-height: 1.8;
+          white-space: nowrap;
+        }
+      }
+
+      .money {
+        font-size: rem(120);
+        line-height: rem(150);
+        text-align: right;
+        position: relative;
+        // @include linear-gradient(to bottom, #ffc302, #ffac07);
+        // -webkit-background-clip: text;
+        // color: transparent;
+        color: #ffb206;
+
+        &:after {
+          content: '';
+          width: rem(40);
+          height: rem(40);
+          display: block;
+          @include bg('../../assets/images/money-icon.png');
+          position: absolute;
+          right: rem(-20);
+          top: rem(93);
+        }
+      }
+    }
+  }
+}

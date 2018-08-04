@@ -1,0 +1,87 @@
+.message-form-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  .message-modal {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .message-box {
+    width: 85%;
+    background: #fff;
+    border-radius: rem(10);
+    overflow: hidden;
+    @include abs-center();
+
+    .title {
+      line-height: rem(80);
+      text-align: center;
+      font-size: rem(32);
+      border-bottom: 1px solid #e7e7e7;
+    }
+
+    .message-content {
+      padding: rem(40, 50, 60);
+
+      input {
+        width: 100%;
+        height: rem(68);
+        line-height: rem(68);
+        border-radius: rem(10);
+        border: 1px solid #ddd;
+        padding: rem(0, 20);
+        font-size: rem(32);
+
+        &:focus {
+          border-color: $color-green;
+          @include transition(.5s);
+        }
+      }
+
+      .error-txt {
+        font-size: rem(30);
+        color: $color-red;
+        height: rem(60);
+        line-height: rem(60);
+      }
+
+      &.error {
+        input {
+          border-color: $color-red;
+        }
+      }
+    }
+
+    .message-footer {
+      width: 100%;
+      font-size: 0;
+      white-space: nowrap;
+      border-top: 1px solid #e7e7e7;
+
+      button {
+        width: 50%;
+        font-size: rem(32);
+        display: inline-block;
+        vertical-align: top;
+        height: rem(80);
+        border: 0;
+        outline: none;
+
+        &.cancel {
+          color: #999;
+          border-right: 1px solid #e7e7e7;
+        }
+
+        &.confirm {
+          color: $color-green;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.join-members-wrapper {
+  height: 100%;
+
+  .join-members-content {
+    h3.j-title {
+      font-size: rem(32);
+      color: #333;
+      line-height: 1;
+      padding-bottom: rem(30);
+      border-bottom: 1px solid #e7e7e7;
+      margin-bottom: rem(30);
+    }
+
+    .kc-title {
+      font-size: rem(26);
+      color: #999;
+      position: relative;
+      line-height: 1;
+      padding-left: rem(25);
+
+      &:after {
+        content: '';
+        @include radius-box(rem(14));
+        background-color: $color-green;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: rem(-7);
+      }
+    }
+  }
+
+  .leader-box {
+    padding: rem(30);
+    background-color: #fff;
+
+    .leader-avatar {
+      @include avatar(rem(100));
+
+      &:after {
+        content: '';
+        @include radius-box(rem(30));
+        @include bg('../../assets/images/icon-leader.png');
+        position: absolute;
+        top: 0;
+        right: rem(-5);
+      }
+    }
+
+    .leader-name {
+      width: rem(100);
+      font-size: rem(26);
+      color: #666;
+      text-align: center;
+      line-height: 1;
+      @include text-overflow();
+      margin-top: rem(20);
+    }
+  }
+
+  a.leader {
+    width: rem(100);
+    display: block;
+  }
+
+  .all-member-list {
+    padding: rem(30);
+    border-top: rem(20) solid #eef1f5;
+  }
+
+  .member-list {
+    font-size: 0;
+    margin-top: rem(33);
+    text-align: left;
+
+    .member {
+      width: rem(100);
+      display: inline-block;
+      vertical-align: top;
+      font-size: rem(24);
+      margin-right: rem(30);
+      margin-bottom: rem(48);
+      color: #666;
+
+      .member-avatar {
+        @include avatar(rem(100));
+
+        &:after {
+          @include radius-box(rem(30));
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: rem(-4);
+          right: rem(-4);
+        }
+
+        &.male {
+          &:after {
+            @include bg('../../assets/images/male.png');
+          }
+        }
+
+        &.famale {
+          &:after {
+            @include bg('../../assets/images/famale.png');
+          }
+        }
+      }
+
+      .nickname {
+        color: #666;
+        text-align: center;
+        line-height: 1;
+        margin-top: rem(20);
+        @include text-overflow();
+      }
+    }
+  }
+}
