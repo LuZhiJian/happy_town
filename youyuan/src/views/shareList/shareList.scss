@@ -61,6 +61,11 @@
       font-size: rem(30);
       color: #666;
       line-height: rem(90);
+
+      span {
+        color: $color-yellow;
+        margin: 0 rem(5);
+      }
     }
   }
 

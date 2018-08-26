@@ -1,3 +1,5 @@
+import Moment from 'moment'
+
 export const amountType = (type) => {
   let name = ''
   switch (type) {
@@ -11,4 +13,10 @@ export const amountType = (type) => {
       name = '未知'
   }
   return name
+}
+
+export const dateFilter = (value) => {
+  let date = ''
+  date = Moment(value).format('YYYY-MM-DD 00:00:00')
+  return date
 }

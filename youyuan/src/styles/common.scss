@@ -251,3 +251,12 @@ $color-green: #21b265;
     background-color: #21b265;
   }
 }
+
+.null-data {
+  min-width: rem(640);
+  font-size: rem(28);
+  color: #ccc;
+  @include abs-center;
+  text-align: center;
+  @include text-overflow();
+}

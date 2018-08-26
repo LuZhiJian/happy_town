@@ -56,6 +56,21 @@
     text-align: center;
     width: rem(360);
     margin: 0 auto;
+    position: relative;
+
+    .star-btn {
+      position: absolute;
+      width: auto;
+      height: rem(50);
+      top: rem(30);
+      left: rem(260);
+      font-size: rem(24);
+      color: #fff;
+      background-color: #282a2c;
+      border: 0;
+      box-shadow: none;
+      white-space: nowrap;
+    }
 
     .user-avatar {
       @include radius-box(rem(100));
@@ -146,6 +161,7 @@
   .fun-list-kop {
     padding: 0 rem(30);
     background-color: #fff;
+    border-bottom: rem(20) solid #eef1f5;
 
     .fun-item {
       display: block;
@@ -171,6 +187,7 @@
       .txt {
         font-size: rem(30);
         color: #333;
+        white-space: nowrap;
 
         b {
           color: $color-yellow;
@@ -188,10 +205,6 @@
         vertical-align: rem(-4);
       }
     }
-  }
-
-  .user-data-tabcontent {
-    border-top: rem(20) solid #eef1f5;
   }
 
   .user-base-data {

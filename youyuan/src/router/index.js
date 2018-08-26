@@ -15,7 +15,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {path: '/home', name: 'Home', component: Home},
-    {path: '/user/center', name: 'UserCenter', component: UserCenter},
+    {path: '/user/center/:customerId',name: 'UserCenter',component: UserCenter},
     {path: '/share/list', name: 'ShareList', component: ShareList},
     {path: '/wallet', name: 'Wallet', component: Wallet},
     {path: '/coupon', name: 'Coupon', component: Coupon},

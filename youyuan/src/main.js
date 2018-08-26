@@ -7,8 +7,13 @@ import store from './store'
 import SvgIcon from 'vue-svgicon'
 import './assets/icons'
 import Mint from 'mint-ui'
+import conf from './api/config'
+import Cookie from 'vue-cookie'
 import 'mint-ui/lib/style.css'
 import * as myFilter from './filter'
+
+var APP_ENV = process.env.APP_ENV || 'dev'
+var baseHost = APP_ENV === 'pro' ? conf.prod.apiHost : conf.dev.apiHost
 
 /*引入移动端手势库*/
 import directives from './directives/touch'
@@ -51,6 +56,14 @@ router.beforeEach(function (to, from, next) {
 
 router.afterEach((to, from, next) => {
   window.scrollTo(0, 0)
+  if (Cookie.get('apiToken')) return false
+  const apiToken = to.query.token
+  if (apiToken) {
+    Cookie.set('apiToken', apiToken)
+  } else {
+    const url = encodeURIComponent(window.location.href)
+    location.href = `${baseHost}/api/customer/toAuthorize.do?backUrl=${url}`
+  }
 })
 
 /* eslint-disable no-new */

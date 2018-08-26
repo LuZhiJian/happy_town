@@ -4,14 +4,14 @@
       <div class="basic-item basic-avatar row">
         <div class="flex-3 labels">我的头像</div>
         <div class="flex-9 edit">
-          <div class="avatar" :style="{backgroundImage: 'url(' + form.avatar + ')'}"></div>
+          <div class="avatar" :style="{backgroundImage: 'url(' + editForm.headImgUrl + ')'}"></div>
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
       <div class="basic-item row">
         <div class="flex-3 labels">昵称</div>
-        <div class="flex-9 edit" @click="editText('昵称', 'name', form.name)">
-          {{form.name}}
+        <div class="flex-9 edit" @click="editText('昵称', 'nickName', editForm.nickName)">
+          {{editForm.nickName}}
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
@@ -21,13 +21,13 @@
           <div class="radio-box">
             <div class="as-radio">
               <label>
-                <input type="radio" name="sex" value="1" v-model="form.sex">
+                <input type="radio" name="sex" value="1" v-model="editForm.sex">
                 <span>男</span>
               </label>
             </div>
             <div class="as-radio">
               <label>
-                <input type="radio" name="sex" value="2" v-model="form.sex">
+                <input type="radio" name="sex" value="2" v-model="editForm.sex">
                 <span>女</span>
               </label>
             </div>
@@ -37,49 +37,49 @@
       <div class="basic-item row">
         <div class="flex-3 labels">年龄</div>
         <div class="flex-9 edit">
-          {{form.age}}
+          {{editForm.age}}
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
       <div class="basic-item row">
         <div class="flex-3 labels">身高</div>
         <div class="flex-9 edit">
-          {{form.height}}
+          {{editForm.height}}
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
       <div class="basic-item row">
         <div class="flex-3 labels">最高学历</div>
         <div class="flex-9 edit">
-          {{form.education}}
+          {{editForm.education}}
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
       <div class="basic-item row">
         <div class="flex-3 labels">籍贯</div>
         <div class="flex-9 edit">
-          {{form.city}}
+          {{editForm.nativePlace}}
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
       <div class="basic-item row">
         <div class="flex-3 labels">职业</div>
         <div class="flex-9 edit">
-          {{form.occupation}}
+          {{editForm.profession}}
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
       <div class="basic-item row">
         <div class="flex-3 labels">感情</div>
         <div class="flex-9 edit">
-          {{form.emotion}}
+          {{editForm.emotionalState}}
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>
       <div class="basic-item row">
         <div class="flex-3 labels">个人签名</div>
         <div class="flex-9 edit">
-          <div class="sign">{{form.desc}}</div>
+          <div class="sign">{{editForm.personalitySignature}}</div>
           <icon name="right" width="18" height="18" color="#6c6c6c"></icon>
         </div>
       </div>

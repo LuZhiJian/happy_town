@@ -1,33 +1,33 @@
+import * as api from '../../api'
+
 export default {
 	name: 'wallet',
 	components: {
 	},
 	data () {
 		return {
-      list: [
-        {
-          name: '天使彦',
-          date: '2018-06-24 09:00:24',
-          type: 2,
-          amount: 8.88
-        },
-        {
-          name: '天使彦',
-          date: '2018-05-28 09:23:24',
-          type: 2,
-          amount: 18.88
-        },
-        {
-          name: '天使彦',
-          date: '2018-03-17 18:00:24',
-          type: 1,
-          amount: 88.88
-        },
-      ]
+      list: [{
+        "amount": 10,
+        "type": -1,
+        "remarks": "提现",
+        "time": "20180801122334"
+      }, {
+        "amount": 10,
+        "type": 1,
+        "remarks": "活动赠送",
+        "time": "20180731160000"
+      }]
 		}
 	},
 	mounted() {
+    this.getDetailList()
 	},
 	methods: {
+    getDetailList() {
+      api.getWalletDetail().then(res => {
+        // console.log(res)
+        this.list = res
+      })
+    }
 	}
 }

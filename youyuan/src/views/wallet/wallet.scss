@@ -46,6 +46,12 @@
       text-align: right;
       font-size: rem(44);
       color: $color-green;
+
+      span {
+        width: rem(40);
+        text-align: center;
+        display: inline-block;
+      }
     }
   }
 }

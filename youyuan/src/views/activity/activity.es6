@@ -1,4 +1,5 @@
 import SwiperBanner from '../../components/swiperBanner'
+import * as api from '../../api'
 
 export default {
 	name: 'activity',
@@ -8,20 +9,10 @@ export default {
 	data () {
 		return {
       tabIndex: 1,
-      bannerList: [
-        {
-          img: 'https://wx4.sinaimg.cn/mw690/8ffeeb91ly1ftjvdwfyauj20go0b4dh4.jpg'
-        },
-        {
-          img: 'https://ww4.sinaimg.cn/mw690/8ffeeb91jw1euxk22sk43j20kt0dqtb0.jpg'
-        },
-        {
-          img: 'https://ww2.sinaimg.cn/mw690/8ffeeb91jw1euxk1l5buij20kt0dsn0s.jpg'
-        },
-        {
-          img: 'https://ww4.sinaimg.cn/mw690/8ffeeb91jw1ei923jygjxj20h60c6ju0.jpg'
-        }
-      ],
+      detailData: {
+        leaderInfo: {}
+      },
+      bannerList: [],
       memberList: [
         {
           avatar: 'https://wx3.sinaimg.cn/mw690/8debe637gy1ftbnocrjplj20j60j6gn1.jpg',
@@ -67,7 +58,24 @@ export default {
 		}
 	},
 	mounted() {
+    this.getDetail()
 	},
 	methods: {
+    getDetail() {
+      const data = {
+        activityId: this.$route.params.id
+      }
+      api.getActivityDetail(data).then(res => {
+        this.bannerList = []
+        console.log(res)
+        this.detailData = res
+        res.imgUrls.forEach(v => {
+          this.bannerList.push({
+            img: v
+          })
+        })
+      })
+
+    }
 	}
 }

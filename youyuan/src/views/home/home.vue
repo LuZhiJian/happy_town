@@ -1,6 +1,6 @@
 <template>
   <div class="home-wrapper">
-    <a href="#/user/center">个人中心</a>
+    <a href="#/user/center/0">个人中心</a>
   </div>
 </template>
 <script>

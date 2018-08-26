@@ -1,3 +1,5 @@
+import * as api from '../../api'
+
 export default {
 	name: 'userCenter',
 	components: {
@@ -29,36 +31,34 @@ export default {
         }
       ],
       editPic: false,
-      activityList: [
-        {
-          acName: '鸡枕山广州第二峰',
-          acId: 101,
-          img: 'https://wx4.sinaimg.cn/mw690/bd297795gy1ft9lbp8nptj20j60iyq85.jpg',
-          status: '已报名',
-          date: '03月24日',
-          day: 2,
-          credit: 90,
-        }, {
-          acName: '广州塔',
-          acId: 102,
-          img: 'https://wx2.sinaimg.cn/mw690/67dd74e0gy1fpi9ndrxkej20j60nyjwa.jpg',
-          status: '未报名',
-          date: '08月24日',
-          day: 3,
-          credit: 130,
-        }, {
-          acName: '长隆水上乐园',
-          acId: 103,
-          img: 'https://ww4.sinaimg.cn/mw690/7f0b4796jw1ej8d86bvpxj20dt0dwta2.jpg',
-          status: '已报名',
-          date: '09月06日',
-          day: 7,
-          credit: 800,
-        }
-      ]
+      userInfo: {},
+      basicInfo: {},
+      activeCustomerId: this.$route.params.customerId,
+      activityList: [{
+        "registrationId": "sadfsadfdasfasf",
+        "activityId": "5b184a9fa6d8454286338fb9d1f556ec",
+        "img": "http://image.ddcxcars.com/upload/upload/20180731/231717553.jpg",
+        "title": "鸡枕山广州第二峰",
+        "departureTime": "2018-08-01 08:00",
+        "activityDay": 2,
+        "credit": 99,
+        "state": "REGISTERED",
+        "payStatus": "PAID"
+      }, {
+        "registrationId": "sdfashsafsdf",
+        "activityId": "5b184a9fa6d8454286338fb9d1f556ec",
+        "img": "http://image.ddcxcars.com/upload/upload/20180731/231717553.jpg",
+        "title": "广州帽峰山徒步旅行",
+        "departureTime": "2018-07-31 07:50",
+        "activityDay": 2,
+        "credit": 56,
+        "state": "IN_PROGRESS",
+        "payStatus": "PAID"
+      }]
     }
-	},
+  },
 	mounted() {
+
 	},
 	methods: {
     edit() {
@@ -66,6 +66,69 @@ export default {
     },
     editBasic() {
       location.href = '#/edit/basic'
+    },
+    getInfo() {
+      let data = {}
+      const cId = this.activeCustomerId
+      if (cId !== '0') {
+        data = {
+          customerId: cId
+        }
+      }
+      api.getCustomerInfo(data).then(res => {
+        res.sex = Number(res.sex)
+        this.userInfo = res
+      })
+    },
+    getBasicInfo() {
+      let data = {}
+      const cId = this.activeCustomerId
+      if (cId !== '0') {
+        data = {
+          customerId: cId
+        }
+      }
+      api.getCustomerBasicInfo(data).then(res => {
+        this.basicInfo = res
+        this.$store.dispatch('getUserBasicInfo', res)
+      })
+    },
+    getActivityList() {
+      api.getActivityList().then(res => {
+        console.log(res)
+      })
+    },
+    toFucos() {
+      const data = {
+        customerId: this.activeCustomerId
+      }
+      api.saveFocus(data).then(res => {
+        console.log(res)
+      })
+    },
+    onTabChange(val) {
+      if (val === 1) {
+        this.getBasicInfo()
+      }
+      if (val === 3) {
+        this.getActivityList()
+      }
+    },
+    onCustomerChange(id) {
+      this.activeCustomerId = id
+      this.getInfo()
     }
-	}
+  },
+  watch: {
+    'tabIndex': {
+      handler: 'onTabChange',
+      immediate: true,
+      deep: true
+    },
+    '$route.params.customerId': {
+      handler: 'onCustomerChange',
+      immediate: true,
+      deep: true
+    }
+  }
 }

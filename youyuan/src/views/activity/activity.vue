@@ -5,30 +5,32 @@
     </div>
     <div class="activity-content">
       <div class="activity-info">
-        <div class="activity-name">广东阳西沙扒湾+阳江月亮湾休闲自由行2日</div>
-        <div class="price"><b>420</b>元/人</div>
+        <div class="activity-name">{{detailData.title}}</div>
+        <div class="price"><b>{{detailData.cost}}</b>元/人</div>
         <div class="leader-box">
-          <div class="leader-avatar" :style="{backgroundImage: 'url(' + 'https://wx3.sinaimg.cn/mw690/006f8wK2gy1fte1ws4g4tj308c08cn17.jpg' + ')'}"></div>
+          <div class="leader-avatar" :style="{backgroundImage: 'url(' + detailData.leaderInfo.headImgUrl + ')'}"></div>
           <div class="leader-other">
-            <div class="name">薇恩<span>（领队）</span></div>
-            <div class="star">评分：4.9 （108人评）</div>
+            <div class="name">{{detailData.leaderInfo.nickName}}<span>（领队）</span></div>
+            <div class="star">评分：{{detailData.leaderInfo.score}} （{{detailData.leaderInfo.commentCount}}人评）</div>
           </div>
         </div>
-        <ul>
-          <li>难度：休闲行摄 +130学分</li>
-          <li>目的地：从化天堂顶（车程约2小时）</li>
-          <li>行程时间：6.23～6.24  周六、周日</li>
-          <li>集合：6月23日早上07:30客村地铁站b出口</li>
-          <li>年龄要求：18岁—38岁</li>
-        </ul>
+        <div class="requirement">
+          <ul>
+            <li>难度：{{detailData.label}} - {{detailData.difficulty}}星 +130学分</li>
+            <li>目的地：{{detailData.destination}}（车程约2小时）</li>
+            <li>行程时间：{{detailData.departureTime}}（{{detailData.activityDay}}天）</li>
+            <li>集合：{{detailData.meetingPlace}}</li>
+            <li>活动要求：{{detailData.requirement}}</li>
+          </ul>
+        </div>
       </div>
 
       <div class="join-members">
         <div class="join-title row">
           <div class="flex-7">
-            <icon name="org" width="18" height="18" color="#21b265"></icon> 已参加的人（<span>20</span>人成行）
+            <icon name="org" width="18" height="18" color="#21b265"></icon> 已参加的人（<span>{{detailData.registeredCount}}</span>人成行）
           </div>
-          <a :href="`#/join/members/${$route.params.id}`" class="flex-5">总共<span>20</span>/50人<icon name="right" width="18" height="18" color="#999"></icon></a>
+          <a :href="`#/join/members/${$route.params.id}`" class="flex-5">总共<span>20</span>/{{detailData.quota}}人<icon name="right" width="18" height="18" color="#999"></icon></a>
         </div>
         <div class="member-list">
           <div class="member" v-for="(v, i) in memberList" :key="i">
@@ -47,26 +49,13 @@
         </mt-navbar>
         <mt-tab-container v-model="tabIndex">
           <mt-tab-container-item :id="1">
-            <div class="details">
-              <p>不做走马观花的Tourist，</p>
-              <p>不做打卡而过的Traveller，</p>
-              <p>我们都是Wanderlust，漫游者。</p>
-              <p>在快节奏的香港中漫游，</p>
-              <p>寻找混凝土与玻璃以外的自然野趣。</p>
-              <p>山野以外，</p>
-              <p>还是无垦。</p>
-              <p>这次，32号带你去发现香港的海~</p>
-            </div>
+            <div class="details" v-html="detailData.details"></div>
           </mt-tab-container-item>
           <mt-tab-container-item :id="2">
-            <div class="trip">
-              行程与准备
-            </div>
+            <div class="trip" v-html="detailData.trip"></div>
           </mt-tab-container-item>
           <mt-tab-container-item :id="3">
-            <div class="cost">
-              费用说明
-            </div>
+            <div class="cost" v-html="detailData.costDescription"></div>
           </mt-tab-container-item>
           <mt-tab-container-item :id="4">
             <div class="comment">评价</div>
