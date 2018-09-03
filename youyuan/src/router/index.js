@@ -23,6 +23,10 @@ export default new Router({
     {path: '/activity/:id', name: 'Activity', component: Activity},
     {path: '/join/members/:activityId', name: 'JoinMembers', component: JoinMembers},
     {path: '/enroll/:activityId', name: 'Enroll', component: Enroll},
-    {path: '*', redirect: 'home', hidden: true}
+    {
+      path: '*',
+      redirect: '/user/center/0',
+      hidden: true
+    }
   ]
 })

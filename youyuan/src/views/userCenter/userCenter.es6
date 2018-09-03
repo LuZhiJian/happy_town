@@ -34,27 +34,29 @@ export default {
       userInfo: {},
       basicInfo: {},
       activeCustomerId: this.$route.params.customerId,
-      activityList: [{
-        "registrationId": "sadfsadfdasfasf",
-        "activityId": "5b184a9fa6d8454286338fb9d1f556ec",
-        "img": "http://image.ddcxcars.com/upload/upload/20180731/231717553.jpg",
-        "title": "鸡枕山广州第二峰",
-        "departureTime": "2018-08-01 08:00",
-        "activityDay": 2,
-        "credit": 99,
-        "state": "REGISTERED",
-        "payStatus": "PAID"
-      }, {
-        "registrationId": "sdfashsafsdf",
-        "activityId": "5b184a9fa6d8454286338fb9d1f556ec",
-        "img": "http://image.ddcxcars.com/upload/upload/20180731/231717553.jpg",
-        "title": "广州帽峰山徒步旅行",
-        "departureTime": "2018-07-31 07:50",
-        "activityDay": 2,
-        "credit": 56,
-        "state": "IN_PROGRESS",
-        "payStatus": "PAID"
-      }]
+      activityList: [
+        {
+          "registrationId": "sadfsadfdasfasf",
+          "activityId": "AT201808202224240001",
+          "img": "http://image.ddcxcars.com/upload/upload/20180731/231717553.jpg",
+          "title": "鸡枕山广州第二峰",
+          "departureTime": "2018-08-01 08:00",
+          "activityDay": 2,
+          "credit": 99,
+          "state": "REGISTERED",
+          "payStatus": "PAID"
+        }, {
+          "registrationId": "sdfashsafsdf",
+          "activityId": "AT201808202224240001",
+          "img": "http://image.ddcxcars.com/upload/upload/20180731/231717553.jpg",
+          "title": "广州帽峰山徒步旅行",
+          "departureTime": "2018-07-31 07:50",
+          "activityDay": 2,
+          "credit": 56,
+          "state": "IN_PROGRESS",
+          "payStatus": "PAID"
+        }
+      ]
     }
   },
 	mounted() {
@@ -78,6 +80,7 @@ export default {
       api.getCustomerInfo(data).then(res => {
         res.sex = Number(res.sex)
         this.userInfo = res
+        this.$store.dispatch('setUser', res)
       })
     },
     getBasicInfo() {

@@ -178,6 +178,23 @@
         & + .member {
           margin-left: rem(30);
         }
+
+        &.leader {
+          position: relative;
+
+          .nickname {
+            color: $color-yellow;
+          }
+
+          &:after {
+            content: '';
+            @include radius-box(rem(30));
+            @include bg('../../assets/images/icon-leader.png');
+            position: absolute;
+            top: 0;
+            right: rem(-5);
+          }
+        }
       }
     }
 
@@ -192,6 +209,11 @@
       color: #333;
       line-height: 1.8;
     }
+
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
   }
 
   .trip,
@@ -199,5 +221,10 @@
   .comment {
     height: rem(520);
     padding: rem(80, 60);
+
+    img {
+      width: 100%!important;
+      height: auto !important;
+    }
   }
 }

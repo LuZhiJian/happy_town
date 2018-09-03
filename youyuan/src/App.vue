@@ -29,7 +29,8 @@ export default {
   .vux-pop-in-enter-active,
   .vux-pop-in-leave-active {
     will-change: transform;
-    transition: all 300ms;
+    transition: all .3s;
+    width: 100%;
     height: 100%;
     top: 0;
     position: absolute;
@@ -51,9 +52,5 @@ export default {
   .vux-pop-in-leave-active {
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
-  }
-
-  #app {
-    min-width: rem(640);
   }
 </style>

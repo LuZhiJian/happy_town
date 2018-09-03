@@ -1,9 +1,12 @@
+import * as api from '../../api'
+
 export default {
 	name: 'joinMembers',
 	components: {
 	},
 	data () {
 		return {
+      leaderList: [],
       memberList: [
         {
           avatar: 'https://wx3.sinaimg.cn/mw690/8debe637gy1ftbnocrjplj20j60j6gn1.jpg',
@@ -49,7 +52,17 @@ export default {
 		}
 	},
 	mounted() {
+    this.getMembers()
 	},
 	methods: {
+    getMembers() {
+      const data = {
+        activityId: this.$route.params.activityId
+      }
+      api.getActivityMembers(data).then(res => {
+        this.leaderList = this.leaderList.concat(res.leaderInfo)
+        this.memberList = res.registers
+      })
+    }
 	}
 }

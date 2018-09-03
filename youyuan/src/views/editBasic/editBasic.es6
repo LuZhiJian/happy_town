@@ -14,7 +14,8 @@ export default {
         editValue: '',
         editKey: ''
       },
-      editForm: {}
+      editForm: {},
+      eduSheetVisible: false
 		}
 	},
 	mounted() {
@@ -30,6 +31,9 @@ export default {
       this.msgBoxData.editValue = myvalue
       this.msgBoxData.editKey = key
     },
+    setData(data) {
+      this.editForm[data.editKey] = data.editValue
+    },
     msgClose() {
       this.msgBoxData = {
         msgVisible: false,
@@ -37,6 +41,13 @@ export default {
         editValue: '',
         editKey: ''
       }
+    },
+    submit() {
+      this.$indicator.open()
+      api.saveBasicInfo(this.editForm).then(res => {
+        this.$indicator.close()
+        location.href = '#/user/center/0'
+      })
     }
   },
   computed: {

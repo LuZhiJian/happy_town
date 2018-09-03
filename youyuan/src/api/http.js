@@ -1,7 +1,7 @@
 import axios from 'axios'
 import conf from './config'
 import Cookie from 'vue-cookie'
-import qs from 'qs'
+// import qs from 'qs'
 
 axios.defaults.withCredentials = true
 axios.defaults.headers.post['Content-Type'] = 'application/json'
@@ -15,8 +15,8 @@ axios.interceptors.request.use(config => {
   if (apiToken) {
     config.headers['token'] = apiToken // 让每个请求携带token-- ['apiToken']为自定义key
   } else {
-    const url = encodeURIComponent(window.location.href)
-    location.href = `${baseHost}/api/customer/toAuthorize.do?backUrl=${url}`
+    // const url = encodeURIComponent(window.location.href)
+    // location.href = `${baseHost}/api/customer/toAuthorize.do?backUrl=${url}`
   }
   return config
 }, err => {
@@ -30,6 +30,7 @@ axios.interceptors.response.use(
     if (Number(res.code) !== 10000) {
       if (Number(res.code) === 50000) {
         // token过期
+        Cookie.delete('apiToken')
         const url = encodeURIComponent(window.location.href)
         location.href = `${baseHost}/api/customer/toAuthorize.do?backUrl=${url}`
       } else {

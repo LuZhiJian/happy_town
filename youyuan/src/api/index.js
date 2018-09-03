@@ -44,3 +44,14 @@ export function getActivityDetail(params) {
 export function saveFocus(params) {
   return http.post('/api/customer/saveStar.do', params)
 }
+
+// 获取参与活动的人员
+export function getActivityMembers(params) {
+  return http.post('/api/registration/getRegisters.do', params)
+}
+
+// 获取报名活动时活动费用与活动信息
+export function getRegisterInfo(params) {
+  return http.post('/api/registration/getInfoToRegister.do', params)
+}
+

@@ -27,7 +27,12 @@
     }
 
     .message-content {
-      padding: rem(40, 50, 60);
+      padding: rem(40, 50);
+
+      .mint-cell-wrapper {
+        padding: 0;
+        background: none;
+      }
 
       input {
         width: 100%;
@@ -42,6 +47,18 @@
           border-color: $color-green;
           @include transition(.5s);
         }
+      }
+
+      textarea {
+        width: 100%;
+        height: rem(240);
+        border: rem(2) solid #ddd;
+        resize: none;
+        border-radius: rem(8);
+        padding: rem(10);
+        font-size: rem(24);
+        line-height: 1.4;
+        word-break: break-all;
       }
 
       .error-txt {

@@ -7,11 +7,11 @@
       <div class="activity-info">
         <div class="activity-name">{{detailData.title}}</div>
         <div class="price"><b>{{detailData.cost}}</b>元/人</div>
-        <div class="leader-box">
-          <div class="leader-avatar" :style="{backgroundImage: 'url(' + detailData.leaderInfo.headImgUrl + ')'}"></div>
+        <div class="leader-box" v-for="(v, i) in detailData.leaderInfoList" :key="i">
+          <div class="leader-avatar" :style="{backgroundImage: 'url(' + v.headImgUrl + ')'}"></div>
           <div class="leader-other">
-            <div class="name">{{detailData.leaderInfo.nickName}}<span>（领队）</span></div>
-            <div class="star">评分：{{detailData.leaderInfo.score}} （{{detailData.leaderInfo.commentCount}}人评）</div>
+            <div class="name">{{v.nickName}}<span>（领队）</span></div>
+            <div class="star">评分：{{v.score}} （{{v.commentCount}}人评）</div>
           </div>
         </div>
         <div class="requirement">
@@ -28,14 +28,14 @@
       <div class="join-members">
         <div class="join-title row">
           <div class="flex-7">
-            <icon name="org" width="18" height="18" color="#21b265"></icon> 已参加的人（<span>{{detailData.registeredCount}}</span>人成行）
+            <icon name="org" width="18" height="18" color="#21b265"></icon> 已参加的人（<span>{{memberList.length}}</span>人成行）
           </div>
-          <a :href="`#/join/members/${$route.params.id}`" class="flex-5">总共<span>20</span>/{{detailData.quota}}人<icon name="right" width="18" height="18" color="#999"></icon></a>
+          <a :href="`#/join/members/${$route.params.id}`" class="flex-5">总共<span>{{memberList.length}}</span>/{{detailData.quota}}人<icon name="right" width="18" height="18" color="#999"></icon></a>
         </div>
         <div class="member-list">
-          <div class="member" v-for="(v, i) in memberList" :key="i">
-            <div :class="'member-avatar ' + (v.sex === 1 ? 'male':'famale')" :style="{backgroundImage: 'url(' + v.avatar + ')'}"></div>
-            <div class="nickname">{{v.name}}</div>
+          <div :class="'member ' + (v.leaderId ? 'leader':'')" v-for="(v, i) in memberList" :key="i">
+            <div :class="'member-avatar ' + (v.sex === '1' ? 'male':'famale')" :style="{backgroundImage: 'url(' + v.headImgUrl + ')'}"></div>
+            <div class="nickname">{{v.nickName}}</div>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
             <div class="details" v-html="detailData.details"></div>
           </mt-tab-container-item>
           <mt-tab-container-item :id="2">
-            <div class="trip" v-html="detailData.trip"></div>
+            <div class="trip" v-html="detailData.scheduling"></div>
           </mt-tab-container-item>
           <mt-tab-container-item :id="3">
             <div class="cost" v-html="detailData.costDescription"></div>

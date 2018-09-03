@@ -1,6 +1,7 @@
 import icon1 from '../../assets/images/wallet.png'
 import icon2 from '../../assets/images/wechat.png'
 import icon3 from '../../assets/images/alipay.png'
+import * as api from '../../api'
 
 export default {
 	name: 'enroll',
@@ -8,6 +9,7 @@ export default {
 	},
 	data () {
 		return {
+      activity: {},
       formData: [
         {
           name: '',
@@ -39,12 +41,13 @@ export default {
 		}
 	},
 	mounted() {
+    this.getInfo()
 	},
 	methods: {
     add() {
       this.formData.push({
         name: '',
-        cardID: '',
+        idCard: '',
         phone: null
       })
     },
@@ -58,6 +61,15 @@ export default {
       })
       item.selected = true
       item.price = this.payTotal
+    },
+    getInfo() {
+      const data = {
+        activityId: this.$route.params.activityId
+      }
+      api.getRegisterInfo(data).then(res => {
+        console.log(res)
+        this.activity = res
+      })
     }
   }
 }

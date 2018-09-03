@@ -6,14 +6,16 @@
         <div class="message-box">
           <div class="title">请输入{{formData.msgTitle}}</div>
           <div class="message-content">
-            <div class="input-box">
-              <input type="text" v-model="formData.editValue">
+            <div class="input-box" v-if="formData.editKey === 'personalitySignature'">
+              <textarea v-model.trim="formData.editValue" placeholder="个人签名"></textarea>
             </div>
-            <div class="error-txt" v-show="false">xxx不能为空</div>
+            <div class="input-box" v-else>
+              <input type="text" v-model.trim="formData.editValue">
+            </div>
           </div>
           <div class="message-footer">
             <button class="cancel" @click="close">取消</button>
-            <button class="confirm">确定</button>
+            <button class="confirm" @click="submit">确定</button>
           </div>
         </div>
       </div>

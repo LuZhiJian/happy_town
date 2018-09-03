@@ -66,6 +66,14 @@ router.afterEach((to, from, next) => {
   }
 })
 
+Vue.prototype.$toast = (msg) => {
+  Mint.Toast({
+    message: msg,
+    position: 'top',
+    duration: 2000
+  })
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -3,10 +3,10 @@
     <div class="enroll-content">
       <div class="part-item">
         <div class="green-title">当前选择</div>
-        <div class="activity-name">广州帽峰山自由行</div>
+        <div class="activity-name">{{activity.activityTitle}}</div>
         <div class="date-and-place">
-          <span>6月30日</span>
-          <span>广州出发</span>
+          <span>{{activity.activityDepartureTime}}</span>
+          <span>{{activity.activityMeetingPlace}}出发</span>
         </div>
       </div>
       <div class="part-item pb0">
@@ -16,7 +16,7 @@
             <mt-field label="真实姓名" placeholder="与证件名字一致" v-model="v.name"></mt-field>
           </div>
           <div class="form-group row" >
-            <mt-field label="身份证" placeholder="与证件号码一致" v-model="v.cardID"></mt-field>
+            <mt-field label="身份证" placeholder="与证件号码一致" v-model="v.idCard"></mt-field>
           </div>
           <div class="form-group row" >
             <mt-field label="电话号码" placeholder="必填" v-model="v.phone"></mt-field>
@@ -33,8 +33,8 @@
         <div class="green-title">费用详情</div>
         <div class="fee-box row">
           <div class="flex-4">基础价格</div>
-          <div class="flex-4 text-c"><span>138</span>元/人</div>
-          <div class="flex-4 text-r">1人</div>
+          <div class="flex-4 text-c"><span>{{activity.activityCost}}</span>元/人</div>
+          <div class="flex-4 text-r">{{activity.registerNum}}人</div>
         </div>
       </div>
       <div class="part-item">

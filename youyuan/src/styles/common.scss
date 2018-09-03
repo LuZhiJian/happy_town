@@ -37,6 +37,11 @@ $color-green: #21b265;
   }
 }
 
+.mint-toast {
+  z-index: 9999!important;
+  background-color: $color-red;
+}
+
 .activity-item {
   width: 100%;
   padding: rem(25, 30);
